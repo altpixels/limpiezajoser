@@ -1,0 +1,659 @@
+@charset "utf-8";
+/* Medios fluidos sencillos
+   Nota: Los medios fluidos exigen la eliminación de los atributos de altura y anchura de los medios del código HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+	width:100%;
+}
+font-family: 'Catamaran', sans-serif;
+
+/*
+	Propiedades de cuadrícula fluida de Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	y Golden Grid System de Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Diseño móvil: 480 px e inferior. */
+
+.gridContainer {
+	/*margin-left: auto;
+	margin-right: auto;
+	padding-left: 1.82%;
+	padding-right: 1.82%;*/
+	width: 100%;
+}
+body {
+	font-family: 'Catamaran', sans-serif;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+h2 {
+	color: #00A1DF;
+	font-size: 1.5em;
+	font-weight: bolder;
+	margin: 20px auto -7px;
+	text-align: center;
+}
+#encabezado {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	clear: both;
+	height: 120px;
+	margin: auto;
+	padding: 0;
+	width: 87%;
+	/*z-index: 10000;
+	position: fixed;
+	top: 0;*/
+}
+#encabezado h1 {
+	margin: 0;
+}
+.logo {
+	display: block;
+	clear: both;
+	width: 100%;
+}
+nav {
+	background-color: #13181E;
+	border-top: #999;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-bottom: #999;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	display: block;
+	clear: both;
+	font-family: "Catamaran", sans-serif;
+	width: 100%;
+	/*z-index: 1;*/
+}
+nav ul{
+	display: none;
+	margin: 0 auto;
+	width: 100%;
+}
+nav li {
+	display: block;
+	clear: both;
+	font-size: 1.25em;
+	font-weight: 400;
+	line-height: 40px;
+	text-align: center;
+}
+nav a {
+	border-bottom: thin solid #00A1DF;
+	display: block;
+	color: #FFF;
+	line-height: 40px;
+	text-decoration: none;
+	width: 100%;
+}
+nav a:link {
+	color: #FFF;
+}
+nav a:visited {
+	color: #FFF;
+}
+.nav-btn {
+	border-bottom: thin solid #00A1DF;
+	color: #FFF;
+	display: block;
+	clear: both;
+	cursor: pointer;
+	font-size: 1.5em;
+	font-weight: 600;
+	line-height: 43px;
+	text-align: center;
+}
+.nav-btn:before {
+	content: "MENÚ";
+	font-family: "Catamaran", sans-serif;
+}
+#presentacion {
+	display: block;
+	clear: both;
+	float: left;
+	position: relative;
+	margin-bottom: 25px;
+	width: 100%;
+}
+.banner {
+	display: block;
+	clear: both;
+	z-index: 0;
+}
+.info {
+	display: block;
+	clear: both;
+	margin: 30px 12%;
+	text-align: center;
+	width: 76%;
+}
+.info p {
+	text-align: center;
+	font-size: 1.35em;
+}
+#mision {
+	background-color: #13181E;
+	display: block;
+	clear: both;
+	padding: 10px 0;
+	width: 100%;
+}
+#mision h3 {
+	font-size: 2em;
+	font-weight: lighter;
+	margin: auto 7.5%;
+	text-align: center;
+}
+.mision-01 {
+	color: #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	clear: both;
+	margin: 20px auto;
+	height: 173px;
+	width: 77%;
+	background-image: url(../imagenes/bg-satisfaccion-de-nuestros-clientes.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+}
+.mision-02 {
+	color: #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	clear: both;
+	margin: 20px auto;
+	height: 173px;
+	width: 77%;
+	background-image: url(../imagenes/bg-servicio-profecional-de-limpieza.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+}
+.mision-03 {
+	color: #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	clear: both;
+	margin: 20px auto;
+	height: 173px;
+	width: 77%;
+	background-image: url(../imagenes/bg-trato-humano-respetuoso.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+}
+#productos {
+	clear: both;
+	display: flex;
+	flex-flow: column wrap;
+	width: 100%;
+}
+.producto-ind {
+	display: block;
+	clear: both;
+	margin: 30px auto 0;
+	text-align: center;
+	width: 77%;
+	/*background-image: url(../imagenes/baleros-productos-bg.jpg);*/
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+}
+.producto-ind img {
+	clear: both;
+}
+.producto-ind h3 {
+	display: block;
+	clear: both;
+	color: #808080;
+	font-size: 1.4em;
+	font-weight: bold;
+	vertical-align: middle;
+	height: 25px;
+}
+.producto-ind p {
+	font-size: 1.3em;
+}
+.productos-limpieza {
+	width: 77%;
+	margin: auto;
+}
+.productos-limpieza h3 {
+	color: #253E86;
+	font-size: 1.8em;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+}
+.productos-limpieza p {
+	font-size: 1.3em;
+	color: #00A2D4;
+	text-align: center;
+}
+#contacto {
+	background-color: #253E86;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10px;
+	width: 100%;
+}
+.contacto-contenido {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.logo-footer {
+	display: none;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+#contacto h3 {
+	display: block;
+	clear: both;
+	color: #FFF;
+	font-size: 1.5em;
+	font-weight: bolder;
+	text-align: center;
+	padding-top: 10px; 
+	margin: 5px auto;
+	padding-bottom: 0;
+	vertical-align: middle;
+	height: 25px;
+}
+.escribenos {
+	width: 100%;
+}
+.formulario {
+	background-color: #FFF;
+	border-color: #00A1DF;
+	border-width: thin;
+	border-style: solid;
+	color: #13181E;
+	font-size: 1.3em;
+	font-weight: 500;
+	margin: auto;
+	padding-bottom: 5px;
+	margin: 5px 5%;
+	text-align: left;
+	width: 90%;
+}
+.formulario:required {
+	background-color: #FFF;
+}
+.g-recaptcha {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+}
+.boton {
+	color: #FFF;
+	clear: both;
+	float: none;
+	font-size: 1.8em;
+	font-weight: bold;
+	background-color: #00A1DF;
+	border-color: #00A1DF;
+	border-width: thin;
+	border-style: solid;
+	border-radius: 5px;
+	display: block;
+	margin: 25px auto;
+	padding: 2px;
+	text-align: center;
+	text-decoration: none;
+	width: 75%;
+}
+.boton a {
+	color: #FFF;
+	text-decoration: none;
+}
+.boton a:hover {
+	color: #FFF;
+	display: block;
+}
+.boton a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+.visitanos {
+	display: block;
+	clear: both;
+	margin-top: 15px;
+	width: 100%;
+}
+.visitanos h3 {
+	margin: 8px auto;
+}
+.mapa {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+.telefono {
+	display: block;
+	clear: both;
+	margin: 12px auto;
+	width: 90%;
+	color: #FFF;
+	font-size: 2em;
+	font-family: 'Catamaran', sans-serif;
+	font-weight: lighter;
+	text-align: center;
+}
+.telefono a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+.telefono a:visited {
+	color: #FFF;
+}
+.correo {
+	display: block;
+	clear: both;
+	margin: 12px auto;
+	width: 90%;
+	color: #FFF;
+	font-size: 1.3em;
+	font-family: 'Catamaran', sans-serif;
+	font-weight: lighter;
+	text-align: center;
+}
+.correo a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+.correo a:visited {
+	color: #FFF;
+}
+.direccion {
+	display: block;
+	clear: both;
+	margin: 10px auto;
+	width: 90%;
+	color: #00A1DF;
+	font-size: 1em;
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+.yugen-credit {
+	color: #FFF;
+	clear: both;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	margin: 20px auto 5px;
+	width: 85%;
+}
+.yugen-credit img {
+	width: 33.33%;
+	margin: 2px auto;
+}
+.yugen-credit h6 {
+	font-size: .85em;
+	font-weight: 300;
+	margin: 2px auto;
+}
+.yugen-credit a:link {
+	color: #00A1DF;
+	text-decoration: none;
+	font-size: .85em;
+	font-weight: 300;
+	margin: 2px auto;
+}
+.yugen-credit a:visited {
+	color: #00A1DF;
+}
+
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil.*/
+
+@media only screen and (min-width: 600px) {
+	h2 {
+		font-size: 1.9em;
+	}
+	.logo {
+		width: 40%;
+	}
+	.info p {
+		font-size: 2em;
+	}
+	#mision {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center; 
+	}
+	#mision h2 {
+		padding: 15px 5%;
+		width: 100%
+	}
+		#mision h3 {
+			font-size: 2em;
+			font-weight: lighter;
+			margin: auto 7.5%;
+			text-align: center;
+		}
+	.mision-01 {
+		width: 28%;
+	}
+	.mision-02 {
+		width: 28%;
+	}
+	.mision-03 {
+		width: 28%;
+	}
+	#productos {
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-content: flex-start;
+		margin-left: auto;
+		margin-right: auto; 
+		width: 95%;
+	}
+	#productos h2 {
+		margin-bottom: 15px;
+		width: 100%;
+	}
+	.producto-ind {
+		width: 30%;
+	}
+	.producto-ind img {
+		width: 100%;
+		max-width: 100%;
+	}
+	.producto-ind h3 {
+		font-size: 1.8em;
+	}
+	.productos-limpieza {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: -12px;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	.productos-limpieza img {
+		width: 30%;
+		max-width: 100%;
+	}
+	.productos-limpieza h3 {
+		display: block;
+		clear: both;
+		color: #253E86;
+		font-size: 1.8em;
+		font-weight: bold;
+		vertical-align: middle;
+		text-align: left;
+	}
+	.productos-limpieza p {
+		font-size: 1.3em;
+		color: #00A2D4;
+		text-align: left;
+	}
+	.logo-footer {
+		display: flex;
+	}
+	.escribenos {
+		display: block;
+		clear: left;
+		float: left;
+		width: 57.5%;
+	}
+	.escribenos h3 {
+		margin-top: 25px; 
+	}
+	.boton {
+		width: 37.5%;
+	}
+	.visitanos {
+		display: block;
+		clear: right;
+		float: right;
+		margin-top: 3px;
+		width: 37.5%;
+	}
+	.mapa iframe {
+	    width: 90% !important;
+	}
+	.yugen-credit {
+		width: 45%;
+	}
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta.*/
+
+@media only screen and (min-width: 769px) {
+		/*.gridContainer {
+			width: 90.675%;
+			padding-left: 1.1625%;
+			padding-right: 1.1625%;
+		}*/
+		#encabezado {
+			justify-content: flex-start;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background-image: url(../imagenes/bg-header-limpieza-joser.svg);
+			background-position: right top;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: auto;
+			/*z-index: 10000;
+			position: fixed;
+			top: 0;*/
+		}
+		.logo {
+			clear: left;
+			float: left;
+			margin-left: 5%;
+			width: 25%;
+		}
+		.nav-btn {
+			display: none;
+		}
+		nav {
+			background-color: transparent;
+			border: 0;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			/*display: inline-block;
+			clear: right;
+			float: right;*/
+			margin-right: 5%;
+			width: 60%;
+		}
+		nav ul {
+			display: flex;
+			justify-content: flex-end;
+		}
+		nav ul li {
+			display: block;
+			clear: both;
+			font-size: 1.25em;
+			font-weight: 400;
+			line-height: 40px;
+			margin-left: 3%;
+			text-align: center;
+		}
+		.info p {
+			line-height: 1.5em;
+		}
+		#mision {
+			padding: 20px 5% 40px;
+			margin-bottom: 50px;
+			width: 90%;
+		}
+		#productos {
+			padding: 0 5% 15px;
+			width: 90%;
+		}
+		.marcas img {
+			width: 20%;
+		}
+		#contacto {
+			padding: 0 5% 15px;
+			width: 90%;
+		}
+		.boton {
+			width: 20%;
+		}
+		.mapa {
+		    padding-bottom: 55%; // This is the aspect ratio
+		}
+		.direccion {
+			font-size: .75em;
+		}
+		.yugen-credit {
+			flex-direction: row;
+			margin: auto auto;
+			width: 20% 
+		}
+}
